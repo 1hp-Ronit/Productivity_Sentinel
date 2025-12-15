@@ -1,38 +1,35 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_app/widgets/home_page.dart';
+/*
+APPLICATION ENTRY POINT
 
-void main() {
+Responsibilities:
+- Initialize Flutter app
+- Start Python backend process
+- Set up dependency injection / providers
+- Load the initial screen
+
+Rules:
+- Python backend should be started ONCE here
+- Do not put UI logic here
+*/
+/// 1. Call PythonProcessService.start()
+library;
+/// 2. Initialize providers
+/// 3. Launch MaterialApp
+
+
+
+
+import 'package:flutter/material.dart';
+
+
+void main(){
   runApp(MyApp());
 }
-
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = ThemeMode.dark;
-  void toggletheme() {
-    setState(() {
-      _themeMode = _themeMode == ThemeMode.dark
-          ?ThemeMode.light
-          :ThemeMode.dark;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Homepage(onToggleTheme :toggletheme),
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(useMaterial3: true),
-      darkTheme: ThemeData.dark(useMaterial3: true),
-
-      themeMode: _themeMode,
-      
-      title: 'Productivity Sentinel',
-    );
+    return const Placeholder();
   }
 }
